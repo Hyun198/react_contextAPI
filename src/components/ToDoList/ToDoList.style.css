@@ -1,0 +1,6 @@
+.todo {
+    display: flex;
+    justify-content: center;
+    background-color: #8ed1fc;
+    margin: 5px 0px;
+}
