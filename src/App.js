@@ -2,11 +2,14 @@ import { useRef } from 'react';
 import './App.css';
 import ToDoList from './components/ToDoList/ToDoList';
 import { useTodos } from './TodoContext';
+import Header from './components/header/Header';
+import { useTheme } from './ButtonContext';
 
 function App() {
 
   const inputRef = useRef(null);
   const { add_Todo } = useTodos();
+  const { theme } = useTheme();
 
   const handle_input = () => {
     const todos = inputRef.current.value;
@@ -27,18 +30,22 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <h1>할일 적기</h1>
-        <input
-          type="test"
-          placeholder='할일 ...'
-          ref={inputRef}
-          onKeyDown={active_Enter}
-        >
-        </input>
-        <button onClick={handle_input}>추가</button>
+      <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
+        <Header />
+        <div>
+          <h1>할일 적기</h1>
+          <input
+            type="test"
+            placeholder='할일 ...'
+            ref={inputRef}
+            onKeyDown={active_Enter}
+          >
+          </input>
+          <button onClick={handle_input}>추가</button>
+        </div>
+        <ToDoList />
       </div>
-      <ToDoList />
+
     </div>
   );
 }

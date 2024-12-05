@@ -1,12 +1,13 @@
 import React from 'react'
-import { useTodos } from '../../TodoContext'
-
+import { useTheme } from '../../ButtonContext'
 const Header = () => {
-
-    const { todos } = useTodos();
+    const { theme, toggle_theme } = useTheme()
 
     return (
-        <div>Header</div>
+        <div>
+            <button onClick={() => toggle_theme()}>{theme}</button>
+        </div>
+
     )
 }
 

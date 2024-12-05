@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { TodoProvider } from './TodoContext';
+import { ThemeProvider } from './ButtonContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <TodoProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <ThemeProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ThemeProvider>
   </TodoProvider>
 
 
