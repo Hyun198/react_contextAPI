@@ -4,7 +4,8 @@ const Header = () => {
     const { theme, toggle_theme } = useTheme()
 
     return (
-        <div>
+        <div className="header-container">
+            <p>날짜</p>
             <button onClick={() => toggle_theme()}>{theme}</button>
         </div>
 

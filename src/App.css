@@ -1,13 +1,39 @@
 .App {
   text-align: center;
+  background-color: #B19CD8;
+  color: white;
+  margin: auto;
 }
 
 .light-theme {
-  background-color: white;
-  color: black;
+  background-color: #E6D1F2;
+
 }
 
 .dark-theme {
-  background-color: black;
-  color: white;
+  background-color: #B19CD8;
+}
+
+.App .input-form {
+  display: flex;
+  justify-content: center;
+}
+
+.App .input-form input {
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.App .input-form button {
+  padding: 10px;
+}
+
+
+/*todo-list container*/
+
+.todolist-container {
+  margin: auto;
+  height: 100vh;
+  background-color: #B19CD8;
 }

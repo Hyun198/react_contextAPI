@@ -32,11 +32,11 @@ function App() {
     <div className="App">
       <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
         <Header />
-        <div>
-          <h1>할일 적기</h1>
+        <h1>To Do List😎✨</h1>
+        <div className="input-form">
           <input
             type="test"
-            placeholder='할일 ...'
+            placeholder='해야할 일...'
             ref={inputRef}
             onKeyDown={active_Enter}
           >

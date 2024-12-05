@@ -4,12 +4,12 @@ import './ToDoList.style.css'
 const ToDoList = () => {
     const { todos, toggle_completed } = useTodos();
     return (
-        <div>
+        <div className="todolist-container">
             <h2>ToDoList</h2>
             {todos.map((todo, index) => (
                 <div className="todo">
-                    <p key={index}>{todo.text}</p>
                     <button onClick={() => toggle_completed(index)}>{todo.iscompleted ? "취소" : "완료"}</button>
+                    <p key={index}>{todo.text}</p>
                 </div>
 
             ))}
