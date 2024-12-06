@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-
+import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { TodoProvider } from './TodoContext';
 import { ThemeProvider } from './ButtonContext';
@@ -10,14 +10,15 @@ import { ThemeProvider } from './ButtonContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <TodoProvider>
-    <ThemeProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </ThemeProvider>
-  </TodoProvider>
-
+  <BrowserRouter>
+    <TodoProvider>
+      <ThemeProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ThemeProvider>
+    </TodoProvider>
+  </BrowserRouter>
 
 
 );

@@ -1,10 +1,11 @@
 import { useRef } from 'react';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
 import ToDoList from './components/ToDoList/ToDoList';
 import Header from './components/header/Header';
+import CompleteList from './components/Complete/CompleteList';
 import { useTheme } from './ButtonContext';
 import { useTodos } from './TodoContext';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
@@ -33,18 +34,27 @@ function App() {
     <div className="App">
       <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
         <Header />
-        <h1>To Do List😎✨</h1>
-        <div className="input-form">
-          <input
-            type="test"
-            placeholder='해야할 일...'
-            ref={inputRef}
-            onKeyDown={active_Enter}
-          >
-          </input>
-          <button onClick={handle_input}>추가</button>
-        </div>
-        <ToDoList />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <h1>To Do List😎✨</h1>
+                <div className="input-form">
+                  <input
+                    type="text"
+                    placeholder="해야할 일..."
+                    ref={inputRef}
+                    onKeyDown={active_Enter}
+                  />
+                  <button onClick={handle_input}>추가</button>
+                </div>
+                <ToDoList />
+              </>
+            }
+          />
+          <Route path="/complete" element={<CompleteList />} />
+        </Routes>
       </div>
     </div>
   );

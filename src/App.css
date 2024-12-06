@@ -3,6 +3,7 @@
   background-color: #B19CD8;
   color: white;
   margin: auto;
+  height: 100vh;
 }
 
 .light-theme {
@@ -34,6 +35,5 @@
 
 .todolist-container {
   margin: auto;
-  height: 100vh;
   background-color: #B19CD8;
 }

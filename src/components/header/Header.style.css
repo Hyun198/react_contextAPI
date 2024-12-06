@@ -2,4 +2,29 @@
     display: flex;
     justify-content: center;
     padding: 10px;
+    gap: 20px;
+
+}
+
+.header-container a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.header-container a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    background-color: black;
+    height: 2px;
+    width: 0;
+    left: 0;
+    transition: width 0.2s ease-in-out;
+}
+
+.header-container a:hover::after {
+    width: 100%;
 }
