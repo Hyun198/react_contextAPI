@@ -8,21 +8,34 @@
 
 
 .todo {
+    position: relative;
     display: flex;
     width: 500px;
     background-color: white;
     color: black;
     border-radius: 10px;
     margin: 5px 0px;
+    gap: 10px;
 }
 
 .todo p {
     padding-left: 10px;
 }
 
-.todo button {
+.todo .complete-btn {
+
     padding: 5px;
     outline: none;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.todo .delete-btn {
+    position: absolute;
+    padding: 5px;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    right: 0;
+    top: 10px;
 }

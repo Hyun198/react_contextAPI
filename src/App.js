@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 import ToDoList from './components/ToDoList/ToDoList';
-import { useTodos } from './TodoContext';
 import Header from './components/header/Header';
 import { useTheme } from './ButtonContext';
+import { useTodos } from './TodoContext';
 
 function App() {
 
@@ -45,7 +46,6 @@ function App() {
         </div>
         <ToDoList />
       </div>
-
     </div>
   );
 }
