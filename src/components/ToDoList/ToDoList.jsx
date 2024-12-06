@@ -3,6 +3,8 @@ import { useTodos } from '../../TodoContext'
 import './ToDoList.style.css'
 const ToDoList = () => {
     const { todos, toggle_completed, toggle_delete } = useTodos();
+
+
     return (
         <div className="todolist-container">
             <h2>ToDoList</h2>
