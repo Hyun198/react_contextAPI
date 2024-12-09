@@ -4,8 +4,10 @@ const ToDoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
     const [todos, SetTodos] = useState([])
-    const add_Todo = (text) => {
-        SetTodos((prev) => [...prev, { text, iscompleted: false }])
+
+
+    const add_Todo = (text, details) => {
+        SetTodos((prev) => [...prev, { text, iscompleted: false, details }])
     }
 
     const toggle_completed = (index) => {

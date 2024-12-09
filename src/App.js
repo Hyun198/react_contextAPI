@@ -10,14 +10,17 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
 
   const inputRef = useRef(null);
+  const detailRef = useRef(null);
   const { add_Todo } = useTodos();
   const { theme } = useTheme();
 
   const handle_input = () => {
     const todos = inputRef.current.value;
+    const todoDetails = detailRef.current.value;
     if (todos.length > 0) {
-      add_Todo(todos)
+      add_Todo(todos, todoDetails)
       inputRef.current.value = "";
+      detailRef.current.value = "";
     }
     else {
       alert("할일을 입력하세요.");
@@ -31,31 +34,37 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className={theme === "dark" ? "dark-theme" : "light-theme"}>
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <h1>To Do List😎✨</h1>
-                <div className="input-form">
+    <div className={`App ${theme === "dark" ? "dark-theme" : "light-theme"}`}>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <h1>To Do List😎✨</h1>
+              <div className="input-form">
+                <div className="input-field">
                   <input
                     type="text"
                     placeholder="해야할 일..."
                     ref={inputRef}
                     onKeyDown={active_Enter}
                   />
-                  <button onClick={handle_input}>추가</button>
+                  <textarea
+                    placeholder='세부 사항...'
+                    ref={detailRef}
+                  />
                 </div>
-                <ToDoList />
-              </>
-            }
-          />
-          <Route path="/complete" element={<CompleteList />} />
-        </Routes>
-      </div>
+
+                <button className="add-btn" onClick={handle_input}>추가</button>
+              </div>
+              <ToDoList />
+            </>
+          }
+        />
+        <Route path="/complete" element={<CompleteList />} />
+      </Routes>
+
     </div>
   );
 }

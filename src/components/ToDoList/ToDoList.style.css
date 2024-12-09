@@ -17,9 +17,20 @@
     gap: 10px;
 }
 
-.todo p {
+.todo .todo-detail {
+    display: flex;
+    flex-direction: column;
     padding-left: 10px;
 }
+
+.todo .todo-detail small {
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    color: grey;
+    padding-left: 10px;
+}
+
 
 .todo .complete-btn {
 
