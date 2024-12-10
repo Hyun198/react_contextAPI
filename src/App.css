@@ -55,12 +55,3 @@
   outline: none;
   cursor: pointer;
 }
-
-
-
-/*todo-list container*/
-
-.todolist-container {
-  margin: auto;
-  background-color: #B19CD8;
-}

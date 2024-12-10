@@ -2,50 +2,72 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: transparent;
+    /* 자식 요소를 가로로 중앙 정렬 */
+    padding: 20px;
+    gap: 15px;
+    /* 카드 간격 */
 }
-
 
 .todo {
     position: relative;
     display: flex;
-    width: 500px;
-    background-color: white;
     color: black;
-    border-radius: 10px;
-    margin: 5px 0px;
-    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
 }
 
-.todo .todo-detail {
+/* 완료 버튼 스타일 */
+.complete-btn {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* 삭제 버튼 스타일 */
+.delete-btn {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+/* 할 일 텍스트와 메타 정보 */
+.todo-detail {
     display: flex;
-    flex-direction: column;
-    padding-left: 10px;
+    gap: 4px;
+    flex: 1;
+    position: relative;
 }
 
-.todo .todo-detail small {
-    position: absolute;
-    bottom: 10px;
-    right: 100px;
-    color: grey;
-    padding-left: 10px;
+.todo-text {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-
-.todo .complete-btn {
-
-    padding: 5px;
-    outline: none;
-    border-radius: 50%;
-    cursor: pointer;
+.todo-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 4px;
 }
 
-.todo .delete-btn {
-    position: absolute;
-    padding: 5px;
-    outline: none;
-    border-radius: 50%;
-    cursor: pointer;
-    right: 0;
-    top: 10px;
+/* 시간과 세부사항 간의 구분 */
+.todo-meta span {
+    display: block;
 }

@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { TodoProvider } from './TodoContext';
-import { ThemeProvider } from './ButtonContext';
+import { TodoProvider } from './utils/TodoContext';
+import { ThemeProvider } from './utils/ButtonContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

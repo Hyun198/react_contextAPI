@@ -3,8 +3,8 @@ import './App.css';
 import ToDoList from './components/ToDoList/ToDoList';
 import Header from './components/header/Header';
 import CompleteList from './components/Complete/CompleteList';
-import { useTheme } from './ButtonContext';
-import { useTodos } from './TodoContext';
+import { useTheme } from './utils/ButtonContext';
+import { useTodos } from './utils/TodoContext';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {

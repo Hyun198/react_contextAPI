@@ -7,13 +7,15 @@ export const TodoProvider = ({ children }) => {
 
 
     const add_Todo = (text, details) => {
-        SetTodos((prev) => [...prev, { text, iscompleted: false, details }])
+        const now = new Date().toLocaleTimeString();
+
+        SetTodos((prev) => [...prev, { text, createdAt: now, iscompleted: false, details }])
     }
 
     const toggle_completed = (index) => {
         SetTodos((prev) =>
             prev.map((todo, i) =>
-                i === index ? { ...todo, iscompleted: !todo.iscompleted } : todo
+                i === index ? { ...todo, completedAt: !todo.iscompleted ? new Date().toLocaleTimeString() : null, iscompleted: !todo.iscompleted } : todo
             )
         );
     }
