@@ -12,6 +12,11 @@
     font-size: 1.2rem;
     position: relative;
     text-transform: uppercase;
+    color: #71479A;
+}
+
+.header-container a:hover {
+    color: white;
 }
 
 .header-container a::after {
