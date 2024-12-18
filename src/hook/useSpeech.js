@@ -11,7 +11,7 @@ const useSpeech = () => {
             SpeechRecognition.startListening({ language: "ko-KR", continuous: true });
         }
     }
-    return { transcript, listening, toggle_listening, resetTranscript };
+    return { transcript, listening, toggle_listening };
 }
 
 export default useSpeech;

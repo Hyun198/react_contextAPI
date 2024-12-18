@@ -28,29 +28,48 @@
   margin: auto;
 }
 
-.App .input-form .input-field .voice-btn {
-  border-radius: 10px;
-  font-size: 1.2em;
+.input-form .input-field .input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.input-form .input-field .input-wrapper input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-form .input-field .input-wrapper .voice-btn {
+  margin-left: 8px;
+  padding: 10px;
+  font-size: 1rem;
   border: none;
-  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .App .input-form input {
-  width: 60%;
-  height: 55px;
+  width: 8ch;
+  height: 80px;
   border: none;
   outline: none;
   margin-bottom: 10px;
   border-radius: 10px;
 }
 
-.App .input-form textarea {
-  border: none;
-  border-radius: 10px;
-  width: 60%;
-  height: 40px;
-  outline: none;
+.input-form .input-field textarea {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px;
   resize: none;
+  outline: none;
 }
 
 .App .input-form .add-btn {
