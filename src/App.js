@@ -10,7 +10,7 @@ import useSpeech from './hook/useSpeech';
 
 function App() {
 
-  const { transcript, listening, toggle_listening } = useSpeech();
+  const { transcript, listening, toggle_listening, resetTranscript } = useSpeech();
   const [inputValue, setInputValue] = useState("");
   const [detailValue, setDetailValue] = useState("");
 
@@ -21,9 +21,11 @@ function App() {
   useEffect(() => {
     if (listening) {
       setInputValue(transcript);
+
     }
 
   }, [transcript, listening]);
+
 
 
   const handle_input = () => {
@@ -56,6 +58,7 @@ function App() {
               <h1>To Do List😎✨</h1>
               <div className="input-form">
                 <div className="input-field">
+
                   <input
                     type="text"
                     placeholder="해야할 일..."
@@ -63,9 +66,11 @@ function App() {
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyDown={active_Enter}
                   />
-                  <button onClick={toggle_listening}>
-                    {listening ? '음성인식 중지' : '음성인식 시작'}
+                  <button className="voice-btn" onClick={toggle_listening}>
+                    {listening ? '⏸' : '▶'}
                   </button>
+
+
                   <textarea
                     placeholder='세부 사항...'
                     value={detailValue}

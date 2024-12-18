@@ -28,6 +28,13 @@
   margin: auto;
 }
 
+.App .input-form .input-field .voice-btn {
+  border-radius: 10px;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+}
+
 .App .input-form input {
   width: 60%;
   height: 55px;
