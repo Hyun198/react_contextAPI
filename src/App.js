@@ -59,6 +59,9 @@ function App() {
               <div className="input-form">
                 <div className="input-field">
                   <div className="input-wrapper">
+                    <button className="voice-btn" onClick={toggle_listening}>
+                      {listening ? '⏸' : '▶'}
+                    </button>
                     <input
                       type="text"
                       placeholder="해야할 일..."
@@ -66,12 +69,7 @@ function App() {
                       onChange={(e) => setInputValue(e.target.value)}
                       onKeyDown={active_Enter}
                     />
-                    <button className="voice-btn" onClick={toggle_listening}>
-                      {listening ? '⏸' : '▶'}
-                    </button>
                   </div>
-
-
                   <textarea
                     placeholder='세부 사항...'
                     value={detailValue}
